@@ -8,7 +8,7 @@ The **GPTs-Discover** repository contains an interactive HTML page that dynamica
 
 ## How to Use
 
-Vist -> [https://mehmetdilekci0.github.io/gtps-discover/](https://mehmetdilekci0.github.io/gtps-discover/)
+Visit -> [https://mehmetdilekci0.github.io/gtps-discover/](https://mehmetdilekci0.github.io/gtps-discover/)
 
 ## Contributing
 
