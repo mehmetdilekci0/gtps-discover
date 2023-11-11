@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT Applications</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {background-color: #f2f2f2;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>GPT Applications</h1>
+        <table id="gptTable">
+            <tr>
+                <th>Model/Application Name</th>
+                <th>Description</th>
+                <th>Author</th>
+                <th>URL</th>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        fetch('gpt-apps.json')
+            .then(response => response.json())
+            .then(data => {
+                const table = document.getElementById('gptTable');
+                data.forEach(item => {
+                    let row = table.insertRow();
+                    let nameCell = row.insertCell(0);
+                    let descriptionCell = row.insertCell(1);
+                    let authorCell = row.insertCell(2);
+                    let urlCell = row.insertCell(3);
+
+                    nameCell.innerHTML = item.name;
+                    descriptionCell.innerHTML = item.description;
+                    authorCell.innerHTML = item.author;
+                    urlCell.innerHTML = `<a href="${item.url}">Link</a>`;
+                });
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>
