@@ -13,9 +13,12 @@
             background-color: #f4f4f4;
         }
         .container {
-            width: 80%;
+            width: 100%;
             margin: auto;
             overflow: hidden;
+        }
+        .scrollable-table {
+            overflow-x: auto;
         }
         table {
             width: 100%;
@@ -28,25 +31,36 @@
         th, td {
             padding: 10px;
             text-align: left;
+            min-width: 60px;
+            word-break: break-word;
         }
         th {
             background-color: #4CAF50;
             color: white;
         }
         tr:nth-child(even) {background-color: #f2f2f2;}
+
+        @media screen and (max-width: 600px) {
+            th, td {
+                padding: 5px;
+                font-size: 12px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>GPT Applications</h1>
-        <table id="gptTable">
-            <tr>
-                <th>Model/Application Name</th>
-                <th>Description</th>
-                <th>Author</th>
-                <th>URL</th>
-            </tr>
-        </table>
+        <div class="scrollable-table">
+            <table id="gptTable">
+                <tr>
+                    <th>Model/Application Name</th>
+                    <th>Description</th>
+                    <th>Author</th>
+                    <th>URL</th>
+                </tr>
+            </table>
+        </div>
     </div>
 
     <script>
