@@ -61,10 +61,10 @@
                     let authorCell = row.insertCell(2);
                     let urlCell = row.insertCell(3);
 
-                    nameCell.innerHTML = item.name;
-                    descriptionCell.innerHTML = item.description;
-                    authorCell.innerHTML = item.author;
-                    urlCell.innerHTML = `<a href="${item.url}">Link</a>`;
+                    nameCell.innerHTML = item.gpt_name;
+                    descriptionCell.innerHTML = item.gpt_description;
+                    authorCell.innerHTML = item.gpt_author;
+                    urlCell.innerHTML = `<a href="${item.gpt_url}">Link</a>`;
                 });
             })
             .catch(error => console.error('Error:', error));
